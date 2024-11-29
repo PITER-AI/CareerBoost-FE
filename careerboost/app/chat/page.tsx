@@ -86,6 +86,15 @@ export default function ChatPage() {
               className="w-8 h-8"
             />
           </button>
+          <Link href="/">
+          <div className="cursor-pointer">
+            <img
+              src="/grid_icon.png"
+              alt="메인페이지로 이동"
+              className="w-10 h-10"
+            />
+          </div>
+        </Link>
         </div>
       </aside>
 
