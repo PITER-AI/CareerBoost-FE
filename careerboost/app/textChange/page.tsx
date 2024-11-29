@@ -1,13 +1,13 @@
+"use client";
+
 import Link from "next/link";
 
-export default function textChangePage() {
+export default function TextChangePage() {
   return (
     <div className="min-h-screen bg-[#F5F5F4] flex flex-col p-6 relative">
-      {/* 헤더 - Career Boost */}
+      {/* 헤더 */}
       <header className="flex items-center mb-8 relative">
         <h1 className="text-5xl font-bold text-burgundy">Career Boost</h1>
-
-        {/* 오른쪽 상단 배치 */}
         <div className="absolute top-0 right-0 flex space-x-2">
           <span className="bg-gray-200 text-gray-800 px-4 py-1 rounded-full text-sm">
             AI 플랫폼 개발자
@@ -19,7 +19,7 @@ export default function textChangePage() {
       </header>
 
       <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto">
-        {/* 왼쪽 - 아이콘 및 텍스트 */}
+        {/* 왼쪽 설명 영역 */}
         <div className="flex flex-col w-full md:w-1/3 pr-6 mb-8 md:mb-0">
           <img
             src="/textchange_logo.png"
@@ -34,43 +34,83 @@ export default function textChangePage() {
           </p>
         </div>
 
-        {/* 오른쪽 - 버튼 영역 */}
-        <div className="w-full md:w-2/3 bg-white rounded-lg shadow-md p-12 grid grid-cols-2 sm:grid-cols-3 gap-6">
-          {/* 버튼들 */}
-          <Link href="/chat">
-            <div className="bg-white border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow hover:bg-mint cursor-pointer transition">
-              <h2 className="text-4xl font-bold text-burgundy">보고서</h2>
+        {/* 오른쪽 버튼 영역 */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 w-full max-w-6xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+          {/* 버튼 1: 보고서 */}
+          <Link
+            href={{
+              pathname: "/chat",
+              query: { type: "report" },
+            }}
+          >
+            <div className="bg-gray-100 border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow-md hover:bg-mint cursor-pointer transition">
+              <h2 className="text-2xl font-bold text-burgundy">보고서</h2>
             </div>
           </Link>
-          <Link href="/chat">
-            <div className="bg-white border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow hover:bg-mint cursor-pointer transition">
-              <h2 className="text-4xl font-bold text-burgundy">이메일</h2>
+
+          {/* 버튼 2: 이메일 */}
+          <Link
+            href={{
+              pathname: "/chat",
+              query: { type: "email" },
+            }}
+          >
+            <div className="bg-gray-100 border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow-md hover:bg-mint cursor-pointer transition">
+              <h2 className="text-2xl font-bold text-burgundy">이메일</h2>
             </div>
           </Link>
-          <Link href="/chat">
-            <div className="bg-white border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow hover:bg-mint cursor-pointer transition">
-              <h2 className="text-4xl font-bold text-burgundy">경조사</h2>
+
+          {/* 버튼 3: 경조사 */}
+          <Link
+            href={{
+              pathname: "/chat",
+              query: { type: "event" },
+            }}
+          >
+            <div className="bg-gray-100 border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow-md hover:bg-mint cursor-pointer transition">
+              <h2 className="text-2xl font-bold text-burgundy">경조사</h2>
             </div>
           </Link>
-          <Link href="/chat">
-            <div className="bg-white border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow hover:bg-mint cursor-pointer transition">
-              <h2 className="text-3xl font-bold text-burgundy">브리핑 대본</h2>
+
+          {/* 버튼 4: 브리핑 대본 */}
+          <Link
+            href={{
+              pathname: "/chat",
+              query: { type: "briefing" },
+            }}
+          >
+            <div className="bg-gray-100 border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow-md hover:bg-mint cursor-pointer transition">
+              <h2 className="text-2xl font-bold text-burgundy">브리핑 대본</h2>
             </div>
           </Link>
-          <Link href="/chat">
-            <div className="bg-white border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow hover:bg-mint cursor-pointer transition">
-              <h2 className="text-4xl font-bold text-burgundy">PPT</h2>
+
+          {/* 버튼 5: PPT */}
+          <Link
+            href={{
+              pathname: "/chat",
+              query: { type: "ppt" },
+            }}
+          >
+            <div className="bg-gray-100 border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow-md hover:bg-mint cursor-pointer transition">
+              <h2 className="text-2xl font-bold text-burgundy">PPT</h2>
             </div>
           </Link>
-          <Link href="/chat">
-            <div className="bg-white border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow hover:bg-mint cursor-pointer transition">
-              <h2 className="text-4xl font-bold text-burgundy">그 외</h2>
+
+          {/* 버튼 6: 그 외 */}
+          <Link
+            href={{
+              pathname: "/chat",
+              query: { type: "others" },
+            }}
+          >
+            <div className="bg-gray-100 border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow-md hover:bg-mint cursor-pointer transition">
+              <h2 className="text-2xl font-bold text-burgundy">그 외</h2>
             </div>
           </Link>
         </div>
       </div>
 
-      {/* 하단 - 그리드 아이콘 */}
+      {/* 하단 그리드 아이콘 */}
       <footer className="flex justify-start mt-auto">
         <Link href="/">
           <div className="cursor-pointer">

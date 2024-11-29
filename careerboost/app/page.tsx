@@ -33,6 +33,7 @@ export default function HomePage() {
                 <h2 className="text-4xl font-bold text-burgundy">문장 변환</h2>
               </div>
             </div>
+            
           </Link>
 
           {/* 노동 금융 법률 버튼 */}
