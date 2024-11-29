@@ -37,7 +37,7 @@ export default function HomePage() {
 
           {/* 노동 금융 법률 버튼 */}
           <Link href="/workAndLow">
-            <div className="bg-burgundy text-white shadow-md rounded-lg flex items-center justify-center text-center hover:bg-red-700 cursor-pointer transition h-full">
+            <div className="bg-[#5C0009] text-white shadow-md rounded-lg flex items-center justify-center text-center hover:bg-red-700 cursor-pointer transition h-full">
               <div className="flex items-center">
                 <img src="/workandlow_logo.png" alt="노동 금융 법률" className="w-12 h-12 mr-4" />
                 <h2 className="text-4xl font-bold">노동·금융 법률</h2>

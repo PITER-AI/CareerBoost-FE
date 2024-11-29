@@ -21,3 +21,12 @@
     </pre>
 </div>
 </details>
+<details>
+<summary>color</summary>
+<div markdown="1">
+    <pre>
+    미리 선언된 컬러가 아닌 커스텀 컬러를 쓰는 방법
+    bg-[#5C0009]
+    </pre>
+</div>
+</details>
