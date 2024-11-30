@@ -4,11 +4,11 @@ export async function POST(req: Request) {
   const body = await req.json();
 
   // 로컬 API URL
-  const localApiUrl = 'http://localhost:8080/api/v1/chat';
+  const targetUrl = 'http://localhost:8080/api/v1/chat';
 
   try {
     // 로컬 API로 요청 전달
-    const response = await fetch(localApiUrl, {
+    const response = await fetch(targetUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
