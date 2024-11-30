@@ -4,8 +4,10 @@ export async function POST(req: Request) {
   const body = await req.json();
 
   // 환경 변수에서 API URL 가져오기
-  const targetUrl = process.env.LOCAL_API_URL || '';
-  // const targetUrl = 'http://localhost:8080/api/v1/chat';
+  const targetUrl =
+    process.env.NODE_ENV === 'production'
+      ? process.env.PROD_API_URL
+      : process.env.LOCAL_API_URL;
 
   if (!targetUrl) {
     return NextResponse.json(
@@ -15,6 +17,10 @@ export async function POST(req: Request) {
   }
 
   try {
+    // 타임아웃 설정
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 300000); // 5분 제한
+
     // 로컬 API로 요청 전달
     const response = await fetch(targetUrl, {
       method: 'POST',
@@ -22,7 +28,10 @@ export async function POST(req: Request) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
+      signal: controller.signal,
     });
+
+    clearTimeout(timeoutId);
 
     if (!response.ok) {
       throw new Error(`API 요청 실패: ${response.statusText}`);
