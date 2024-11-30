@@ -59,7 +59,7 @@ export default function ChatPage() {
           <h2 className="text-lg font-bold mb-4">바로 대화하기</h2>
           <ul className="space-y-2">
             {chatRecords.map((record, index) => (
-              <li key={index} className="p-4 bg-gray-100 rounded-lg">
+              <li key={index} className="p-4 bg-gray-200 rounded-lg">
                 {record}
               </li>
             ))}
@@ -163,6 +163,13 @@ export default function ChatPage() {
               </button>
             ))}
           </div>
+        </div>
+
+        {/* 추후 기능 안내 */}
+        <div>
+          <h2 className="text-xl font-bold text-burgundy mb-4">해당 페이지는 추후 기능을 보여주기 위한 예시입니다.</h2>
+          <h2 className="text-gray-700">선택한 옵션에 따라 LLM 서버로 prompt를 전달하는 로직을 추가할 수 있습니다.</h2>
+          <h2 className="text-gray-700">시연과 테스트를 위해서 바로 [직접 입력] 버튼을 눌러주세요.</h2>
         </div>
 
         {/* 제출 버튼 */}
