@@ -24,8 +24,6 @@ export default function DirectInputModePage() {
     setInputText("");
 
     try {
-      const startTime = Date.now(); // 요청 시작 시간 기록
-
       const response = await fetch("/api/proxy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
