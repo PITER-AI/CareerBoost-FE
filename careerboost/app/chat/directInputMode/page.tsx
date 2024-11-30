@@ -113,7 +113,7 @@ export default function DirectInputModePage() {
         {/* 응답 시간 출력 */}
         {responseTime !== null && (
           <div className="text-gray-600 text-sm mt-2">
-            이 답변은 "서버에서 {responseTime}초 만에 출력되었습니다."
+            이 답변은 서버에서 {responseTime}초 만에 출력되었습니다.
           </div>
         )}
       </div>
