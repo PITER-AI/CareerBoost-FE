@@ -34,11 +34,11 @@ export default function ChatPage() {
     setSelectedOptions((prev) => ({ ...prev, [key]: value }));
   };
 
-  const handlePromptSubmit = () => {
-    const prompt = `보고서유형은 ${selectedOptions.reportType}이고 글에서 다루는 주제는 ${selectedOptions.subject}이며, 대상은 ${selectedOptions.userRole}입니다.`;
-    alert(`Prompt 전송: ${prompt}`);
-    // LLM 서버로 prompt를 전달하는 로직 추가 가능
-  };
+  // const handlePromptSubmit = () => {
+  //   const prompt = `보고서유형은 ${selectedOptions.reportType}이고 글에서 다루는 주제는 ${selectedOptions.subject}이며, 대상은 ${selectedOptions.userRole}입니다.`;
+  //   alert(`Prompt 전송: ${prompt}`);
+  //   // LLM 서버로 prompt를 전달하는 로직 추가 가능
+  // };
 
   const handleRefresh = () => {
     fetchChatRecords();
