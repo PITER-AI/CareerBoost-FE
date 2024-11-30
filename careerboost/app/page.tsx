@@ -44,7 +44,7 @@ export default function HomePage() {
             <div className="bg-[#5C0009] text-white shadow-md rounded-lg flex items-center justify-center text-center hover:bg-red-700 cursor-pointer transition h-full">
               <div className="flex items-center">
                 <Image src="/workandlow_logo.png" alt="노동 금융 법률" width={42} height={42} className="mr-4" />
-                <h2 className="text-4xl font-bold">노동·금융 법률</h2>
+                <h2 className="text-4xl font">노동·금융 법률</h2>
               </div>
             </div>
           </Link>
