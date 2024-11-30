@@ -41,15 +41,12 @@ export default function workAndLowPage() {
         </div>
 
         {/* 오른쪽 - 버튼 영역 */}
-        <div className="w-full md:w-2/3 bg-white rounded-lg shadow-md p-12 grid grid-cols-2 sm:grid-cols-3 gap-6">
+        <div className="w-full md:w-2/3 bg-white rounded-lg shadow-md p-12 grid grid-cols-2 sm:grid-cols-1 gap-6">
           {/* 버튼들 */}
           {[
-            { label: "보고서", type: "report" },
-            { label: "이메일", type: "email" },
-            { label: "경조사", type: "event" },
-            { label: "브리핑 대본", type: "briefing" },
-            { label: "PPT", type: "ppt" },
-            { label: "그 외", type: "others" },
+            { label: "노동법 자주 묻는 질문", type: "workquestion" },
+            { label: "금융법 자주 묻는 질문", type: "lowquestion" },
+            { label: "질문 직접 입력", type: "userinput" },
           ].map((button) => (
             <Link
               href={{
@@ -58,8 +55,8 @@ export default function workAndLowPage() {
               }}
               key={button.type}
             >
-              <div className="bg-gray-100 border border-gray-300 rounded-lg flex items-center justify-center h-48 shadow-md hover:bg-mint cursor-pointer transition">
-                <h2 className="text-4xl font-bold text-burgundy">
+              <div className="bg-gray-100 border border-gray-300 rounded-lg flex items-center justify-center h-28 shadow-md hover:bg-mint cursor-pointer transition">
+                <h2 className="text-3xl font-bold text-burgundy">
                   {button.label}
                 </h2>
               </div>

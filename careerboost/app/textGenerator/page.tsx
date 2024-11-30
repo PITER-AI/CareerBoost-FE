@@ -27,7 +27,7 @@ export default function TextGeneratorPage() {
           <Image
             src="/textgenerator_logo.png"
             className="mb-4"
-            alt="텍스트 생성 로고"
+            alt="업무 문서 작성"
             width={64}
             height={64}
           />
@@ -44,12 +44,9 @@ export default function TextGeneratorPage() {
         <div className="w-full md:w-2/3 bg-white rounded-lg shadow-md p-12 grid grid-cols-2 sm:grid-cols-3 gap-6">
           {/* 버튼들 */}
           {[
-            { label: "보고서", type: "report" },
-            { label: "이메일", type: "email" },
-            { label: "경조사", type: "event" },
-            { label: "브리핑 대본", type: "briefing" },
-            { label: "PPT", type: "ppt" },
-            { label: "그 외", type: "others" },
+            { label: "템플릿 적용", type: "reporttemplete" },
+            { label: "오탈자 검수", type: "fixword" },
+            { label: "PDF 분석", type: "pdfanalysus" },
           ].map((button) => (
             <Link
               href={{
