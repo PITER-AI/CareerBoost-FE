@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import axios from "axios";
+import Image from "next/image";
 
 export default function ChatPage() {
   const [chatRecords, setChatRecords] = useState<string[]>([]);
@@ -15,7 +16,7 @@ export default function ChatPage() {
   const fetchChatRecords = async () => {
     try {
       // API 통신을 통해 기존 기록 가져오기
-      const response = await axios.get("http://127.0.0.1:8000/generator");
+      const response = await axios.get<{ records: string[] }>("http://127.0.0.1:8000/generator");
       setChatRecords(response.data.records || []);
     } catch (error) {
       console.error("챗봇 기록 로드 실패:", error);
@@ -69,10 +70,12 @@ export default function ChatPage() {
         <div className="flex items-center space-x-4">
           {/* 설정 버튼 */}
           <Link href="/about">
-            <img
+            <Image
               src="/settings_icon.png"
               alt="설정 아이콘"
-              className="w-8 h-8 cursor-pointer"
+              className="cursor-pointer"
+              width={42}
+              height={42}
             />
           </Link>
           {/* 새로고침 버튼 */}
@@ -80,18 +83,20 @@ export default function ChatPage() {
             onClick={handleRefresh}
             className="p-2 rounded-lg bg-gray-200 hover:bg-gray-300"
           >
-            <img
+            <Image
               src="/refresh_icon.png"
               alt="새로고침 아이콘"
-              className="w-8 h-8"
+              width={42}
+              height={42}
             />
           </button>
           <Link href="/">
           <div className="cursor-pointer">
-            <img
+            <Image
               src="/grid_icon.png"
               alt="메인페이지로 이동"
-              className="w-10 h-10"
+              width={42}
+              height={42}
             />
           </div>
         </Link>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
@@ -7,10 +8,12 @@ export default function HomePage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl p-8">
         {/* Left: Career Boost Section */}
         <div className="col-span-1 flex flex-col bg-white p-6 shadow-md rounded-lg">
-          <img
+          <Image
             src="/careerboost_logo.png"
             alt="Career Boost Logo"
-            className="w-100% h-100% mb-4"
+            width={256} // 이미지의 너비 지정
+            height={256} // 이미지의 높이 지정
+            className="mb-4"
           />
           <h1 className="text-4xl font-bold text-burgundy">Career Boost</h1>
           <div className="flex space-x-2 mt-4">
@@ -29,7 +32,7 @@ export default function HomePage() {
           <Link href="/textChange">
             <div className="bg-gray-100 border border-gray-200 shadow-md rounded-lg flex items-center justify-center text-center hover:bg-gray-200 cursor-pointer transition h-full">
               <div className="flex items-center">
-                <img src="/textchange_logo.png" alt="문장 변환" className="w-12 h-12 mr-8" />
+                <Image src="/textchange_logo.png" alt="문장 변환" width={42} height={42} className="mr-8" />
                 <h2 className="text-4xl font-bold text-burgundy">문장 변환</h2>
               </div>
             </div>
@@ -40,7 +43,7 @@ export default function HomePage() {
           <Link href="/workAndLow">
             <div className="bg-[#5C0009] text-white shadow-md rounded-lg flex items-center justify-center text-center hover:bg-red-700 cursor-pointer transition h-full">
               <div className="flex items-center">
-                <img src="/workandlow_logo.png" alt="노동 금융 법률" className="w-12 h-12 mr-4" />
+                <Image src="/workandlow_logo.png" alt="노동 금융 법률" width={42} height={42} className="mr-4" />
                 <h2 className="text-4xl font-bold">노동·금융 법률</h2>
               </div>
             </div>
@@ -50,7 +53,7 @@ export default function HomePage() {
           <Link href="/myMento">
             <div className="bg-mint shadow-md rounded-lg flex items-center justify-center text-center hover:bg-mint-light cursor-pointer transition h-full">
               <div className="flex items-center">
-                <img src="/mymento_logo.png" alt="나만의 멘토" className="w-12 h-12 mr-8" />
+                <Image src="/mymento_logo.png" alt="나만의 멘토" width={42} height={42} className="mr-8" />
                 <h2 className="text-4xl font-bold text-burgundy">나만의 멘토</h2>
               </div>
             </div>
@@ -60,7 +63,7 @@ export default function HomePage() {
           <Link href="/textGenerator">
             <div className="bg-gray-100 border border-gray-200 shadow-md rounded-lg flex items-center justify-center text-center hover:bg-gray-200 cursor-pointer transition h-full">
               <div className="flex items-center">
-                <img src="/textgenerator_logo.png" alt="업무 문서 작성" className="w-12 h-12 mr-4" />
+                <Image src="/textgenerator_logo.png" alt="업무 문서 작성" width={42} height={42} className="mr-4" />
                 <h2 className="text-4xl font-bold text-burgundy">업무 문서 작성</h2>
               </div>
             </div>
