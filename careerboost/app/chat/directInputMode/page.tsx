@@ -59,7 +59,7 @@ export default function DirectInputModePage() {
 
   const parseContent = (content: string): string => {
     // 시작 및 종료 패턴들
-    const startPatterns = ["#1", "[1]", "(1)", "###1", "1)", "1"];
+    const startPatterns = ["#1", "[1]", "(1)", "###1", "1)", "1", ""];
     const endPatterns = ["#2", "[2]", "(2)", "###2", "2)", "2"];
   
     // 시작 인덱스를 찾기

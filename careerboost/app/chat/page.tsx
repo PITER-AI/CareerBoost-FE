@@ -57,7 +57,7 @@ export default function ChatPage() {
 
         {/* 챗봇 기록 */}
         <div className="flex-1 overflow-y-auto mb-4">
-          <h2 className="text-lg font-bold mb-4">바로 대화하기</h2>
+          <h2 className="text-lg font-bold mb-4">이전 대화 기록</h2>
           <ul className="space-y-2">
             {chatRecords.map((record, index) => (
               <li key={index} className="p-4 bg-gray-200 rounded-lg">
@@ -108,9 +108,9 @@ export default function ChatPage() {
       <main className="w-2/3 p-6 flex flex-col space-y-8">
         {/* 보고서 유형 */}
         <div>
-          <h2 className="text-xl font-bold text-burgundy mb-4">보고서 유형은</h2>
+          <h2 className="text-xl font-bold text-burgundy mb-4">보고서 유형은 무엇인가요.</h2>
           <div className="flex flex-wrap gap-4">
-            {["정기 보고", "결제 정산", "해외", "기타 보고"].map((type) => (
+            {["정기 보고", "결제", "해외", "공문", "기타"].map((type) => (
               <button
                 key={type}
                 onClick={() => handleOptionSelect("reportType", type)}
@@ -128,9 +128,9 @@ export default function ChatPage() {
 
         {/* 글에서 다루는 주제 */}
         <div>
-          <h2 className="text-xl font-bold text-burgundy mb-4">글에서 다루는 주제는</h2>
+          <h2 className="text-xl font-bold text-burgundy mb-4">글에서 다루는 주제는 무엇인가요.</h2>
           <div className="flex flex-wrap gap-4">
-            {["경영", "공학 & IT", "디자인", "인적자원"].map((subject) => (
+            {["경영", "공학 & IT", "디자인", "HR", "기타"].map((subject) => (
               <button
                 key={subject}
                 onClick={() => handleOptionSelect("subject", subject)}
@@ -148,9 +148,9 @@ export default function ChatPage() {
 
         {/* 대상 */}
         <div>
-          <h2 className="text-xl font-bold text-burgundy mb-4">대상은 누구인가요?</h2>
+          <h2 className="text-xl font-bold text-burgundy mb-4">대상은 누구인가요.</h2>
           <div className="flex flex-wrap gap-4">
-            {["공공기관", "이사진", "동료", "거래처"].map((role) => (
+            {["공공기관", "상사", "동료", "거래처", "기타"].map((role) => (
               <button
                 key={role}
                 onClick={() => handleOptionSelect("userRole", role)}
