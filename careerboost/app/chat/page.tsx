@@ -174,8 +174,8 @@ export default function ChatPage() {
             선택 완료
           </button>
           <button
-            onClick={() => alert("직접 입력 모드")}
-            className="px-6 py-3 border border-gray-300 text-gray-700 font-bold rounded-lg hover:bg-gray-100 transition"
+          onClick={() => (window.location.href = "/chat/directInputMode")}
+          className="px-6 py-3 border border-gray-300 text-gray-700 font-bold rounded-lg hover:bg-gray-100 transition"
           >
             직접 입력
           </button>
