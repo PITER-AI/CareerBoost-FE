@@ -167,16 +167,17 @@ export default function ChatPage() {
         </div>
 
         {/* 추후 기능 안내 */}
-        <div>
+        {/* <div>
           <h2 className="text-xl font-bold text-burgundy mb-4">해당 페이지는 추후 기능을 보여주기 위한 예시입니다.</h2>
           <h2 className="text-gray-700">선택한 옵션에 따라 LLM 서버로 prompt를 전달하는 로직을 추가할 수 있습니다.</h2>
           <h2 className="text-gray-700">시연과 테스트를 위해서 바로 [직접 입력] 버튼을 눌러주세요.</h2>
-        </div>
+        </div> */}
 
         {/* 제출 버튼 */}
         <div className="flex space-x-4">
           <button
-            onClick={handlePromptSubmit}
+             // onClick={handlePromptSubmit}
+            onClick={() => (window.location.href = "/chat/directInputMode")}
             className="px-6 py-3 bg-burgundy text-white font-bold rounded-lg hover:bg-red-700 transition"
           >
             선택 완료
