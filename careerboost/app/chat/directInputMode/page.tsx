@@ -8,7 +8,6 @@ import Link from "next/link";
 export default function DirectInputModePage() {
   const [messages, setMessages] = useState<{ sender: string; text: string }[]>([]);
   const [inputText, setInputText] = useState("");
-  const [responseTime, setResponseTime] = useState<number | null>(null); // 응답 시간 상태
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,11 +48,7 @@ export default function DirectInputModePage() {
 
       // 응답에서 입력값 제거 후 파싱
       const fullContent = data.message?.content || "서버에서 적절한 응답을 받지 못했습니다.";
-      const parsedContent = parseContent(fullContent, inputText);
-
-      const endTime = Date.now(); // 요청 종료 시간 기록
-      const timeTaken = ((endTime - startTime) / 1000).toFixed(2); // 응답 시간 계산 (초 단위)
-      setResponseTime(Number(timeTaken)); // 응답 시간 저장
+      const parsedContent = parseContent(fullContent);
 
       const serverMessage = { sender: "server", text: parsedContent };
       setMessages((prev) => [...prev, serverMessage]);
@@ -61,7 +56,6 @@ export default function DirectInputModePage() {
       console.error("LLM 서버 통신 실패:", error);
       const errorMessage = { sender: "server", text: "API 서버가 종료되었습니다." };
       setMessages((prev) => [...prev, errorMessage]);
-      setResponseTime(null); // 응답 시간 초기화
     }
   };
 
@@ -143,12 +137,6 @@ export default function DirectInputModePage() {
             <div ref={chatEndRef}></div>
           </div>
         ))}
-        {/* 응답 시간 출력 */}
-        {responseTime !== null && (
-          <div className="text-gray-600 text-sm mt-2">
-            이 답변은 서버에서 {responseTime}초 만에 출력되었습니다.
-          </div>
-        )}
       </div>
 
       {/* 입력 영역 */}
