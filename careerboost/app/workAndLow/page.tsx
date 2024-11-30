@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function workAndLowPage() {
   return (
@@ -23,9 +24,12 @@ export default function workAndLowPage() {
       <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto">
         {/* 왼쪽 - 아이콘 및 텍스트 */}
         <div className="flex flex-col w-full md:w-1/3 pr-6 mb-8 md:mb-0">
-          <img
+          <Image
             src="/workandlow_logo.png"
-            className="w-16 h-16 mb-4"
+            className="mb-4"
+            width={64}
+            height={64}
+            alt="노동·금융 로고"
           />
           <h2 className="text-4xl font-bold text-burgundy mb-4">노동·금융 법률</h2>
           <p className="text-lg text-gray-700 leading-relaxed">
@@ -67,10 +71,11 @@ export default function workAndLowPage() {
       <footer className="flex justify-start mt-auto">
         <Link href="/">
           <div className="cursor-pointer">
-            <img
+            <Image
               src="/grid_icon.png"
               alt="메인페이지로 이동"
-              className="w-10 h-10"
+              width={42}
+              height={42}
             />
           </div>
         </Link>

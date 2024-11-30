@@ -1,6 +1,9 @@
 # CareerBoost-FE
 
 ## 내가 외우기 위해 만든 tailwind css 문법
+
+### 필요한 외부 라이브러리
+    npm install --save-dev @types/axios
 <details>
 <summary>text size</summary>
 <div markdown="1">
@@ -28,5 +31,23 @@
     미리 선언된 컬러가 아닌 커스텀 컬러를 쓰는 방법
     bg-[#5C0009]
     </pre>
+</div>
+</details>
+<details>
+<summary>Image component</summary>
+<div markdown="1">
+    <pre>
+        import Image from 'next/image';
+        export default function Page() {
+        return (
+            <Image
+            src="/profile.png"
+            width={500}
+            height={500}
+            alt="Picture of the author"
+            />
+        )
+        }
+</pre>
 </div>
 </details>
