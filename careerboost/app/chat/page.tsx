@@ -14,7 +14,11 @@ export default function ChatPage() {
 
   const fetchChatRecords = async () => {
     try {
-     
+      setChatRecords([
+        "판교 사투리에 대해 알려줘!....",
+        "typescript를 nextjs에 어떻게....",
+        "공공기관 한글 파일 양식의 구성...",
+      ])
     } catch (error) {
       console.error("챗봇 기록 로드 실패:", error);
       // 더미 데이터 설정

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,6 +9,12 @@ export default function DirectInputModePage() {
   const [messages, setMessages] = useState<{ sender: string; text: string }[]>([]);
   const [inputText, setInputText] = useState("");
   const [responseTime, setResponseTime] = useState<number | null>(null); // 응답 시간 상태
+  const chatEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // messages가 변경될 때마다 하단으로 스크롤
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const handleSendMessage = async () => {
     if (!inputText.trim()) return;
@@ -52,7 +59,7 @@ export default function DirectInputModePage() {
       setMessages((prev) => [...prev, serverMessage]);
     } catch (error) {
       console.error("LLM 서버 통신 실패:", error);
-      const errorMessage = { sender: "server", text: "서버와의 연결이 불안정합니다." };
+      const errorMessage = { sender: "server", text: "API 서버가 종료되었습니다." };
       setMessages((prev) => [...prev, errorMessage]);
       setResponseTime(null); // 응답 시간 초기화
     }
@@ -108,6 +115,7 @@ export default function DirectInputModePage() {
             >
               {msg.text}
             </div>
+            <div ref={chatEndRef}></div>
           </div>
         ))}
         {/* 응답 시간 출력 */}
