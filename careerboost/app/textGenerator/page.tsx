@@ -33,9 +33,10 @@ export default function TextGeneratorPage() {
           />
           <h2 className="text-4xl font-bold text-burgundy mb-4">업무 문서 작성</h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            업무에 적합한 보고서 문장<br />
-            종결어미 통일 ‘~하였다’, ‘했다’<br />
-            보고서 핵심 내용이 담긴 요약과 결론
+          업무에 필요한 문서들을 작성해보세요!<br />
+          이 탭에서는 템플릿 적용, 문서 오탈자<br /> 
+          검수 등 문서 작성과 관련된 기능적 지원을<br />
+          받을 수 있습니다.
           </p>
         </div>
 

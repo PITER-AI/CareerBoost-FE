@@ -33,9 +33,9 @@ export default function myMentoPage() {
           />
           <h2 className="text-4xl font-bold text-burgundy mb-4">나만의 멘토</h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            업무에 적합한 보고서 문장<br />
-            종결어미 통일 ‘~하였다’, ‘했다’<br />
-            보고서 핵심 내용이 담긴 요약과 결론
+          회사 생활에서의 애로사항을 물어보세요!<br />
+          이 탭에서는 비즈니스 매너나 비즈니스 용어,<br />
+          회사 생활과 관련된 팁을 물어볼 수 있습니다.
           </p>
         </div>
 
