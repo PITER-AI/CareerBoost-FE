@@ -65,19 +65,44 @@ export default function DirectInputModePage() {
     }
   };
 
-  const parseContent = (content: string, userInput: string): string => {
-    const marker = "are EXAONE model from LG AI Research, a helpful assistant question :";
-    const markerIndex = content.indexOf(marker);
-
-    if (markerIndex !== -1) {
-      const relevantContent = content.slice(markerIndex + marker.length).trim();
-      // 입력값 제거
-      const sanitizedContent = relevantContent.replace(userInput, "").trim();
-      return sanitizedContent;
+  const parseContent = (content: string): string => {
+    // 시작 및 종료 패턴들
+    const startPatterns = ["#1", "[1]", "(1)", "###1", "1)", "1"];
+    const endPatterns = ["#2", "[2]", "(2)", "###2", "2)", "2"];
+  
+    // 시작 인덱스를 찾기
+    let startIndex = -1;
+    for (const pattern of startPatterns) {
+      const index = content.indexOf(pattern);
+      if (index !== -1 && (startIndex === -1 || index < startIndex)) {
+        // 가장 먼저 나오는 시작 패턴의 인덱스를 설정
+        startIndex = index + pattern.length;
+      }
     }
-    return content;
+  
+    // 시작 패턴이 없으면 전체 반환
+    if (startIndex === -1) {
+      return content;
+    }
+  
+    // 종료 인덱스를 찾기
+    let endIndex = -1;
+    for (const pattern of endPatterns) {
+      const index = content.indexOf(pattern, startIndex); // startIndex 이후부터 검색
+      if (index !== -1 && (endIndex === -1 || index < endIndex)) {
+        endIndex = index;
+      }
+    }
+  
+    // 시작 패턴과 종료 패턴 사이의 텍스트 반환
+    if (endIndex !== -1) {
+      return content.slice(startIndex, endIndex).trim();
+    }
+  
+    // 종료 패턴이 없으면 시작 패턴 이후부터 끝까지 반환
+    return content.slice(startIndex).trim();
   };
-
+  
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleSendMessage();
