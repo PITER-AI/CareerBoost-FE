@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import axios from "axios";
 import Image from "next/image";
 
 export default function ChatPage() {
@@ -15,9 +14,7 @@ export default function ChatPage() {
 
   const fetchChatRecords = async () => {
     try {
-      // API 통신을 통해 기존 기록 가져오기
-      const response = await axios.get<{ records: string[] }>("http://127.0.0.1:8000/generator");
-      setChatRecords(response.data.records || []);
+     
     } catch (error) {
       console.error("챗봇 기록 로드 실패:", error);
       // 더미 데이터 설정
