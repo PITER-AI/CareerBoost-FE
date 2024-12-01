@@ -10,15 +10,6 @@ export default function workAndLowPage() {
       <header className="flex items-center mb-8 relative">
         <h1 className="text-5xl font-bold text-burgundy">Career Boost</h1>
 
-        {/* 오른쪽 상단 배치 */}
-        <div className="absolute top-0 right-0 flex space-x-2">
-          <span className="bg-gray-200 text-gray-800 px-4 py-1 rounded-full text-sm">
-            AI 플랫폼 개발자
-          </span>
-          <span className="bg-gray-200 text-gray-800 px-4 py-1 rounded-full text-sm">
-            장그래 사원
-          </span>
-        </div>
       </header>
 
       <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto">
